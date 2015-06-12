@@ -10,6 +10,8 @@ perl Makefile.PL && make test && make install
 cd $MYWORKDIR
 
 # Install PyExifTool
-gzip -dc smarnach-pyexiftool-3db3764.tar.gz | tar -xf -
-cd $MYWORKDIR/smarnach-pyexiftool-3db3764
+git clone https://github.com/smarnach/pyexiftool.git
+cd pyexiftool
+git remote add shoyebi https://github.com/shoyebi/pyexiftool.git
+git checkout -b resolving_eagain shoyebi/resolving_eagain
 python setup.py install
